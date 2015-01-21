@@ -1,0 +1,690 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background" >
+    
+     <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:gravity="right" >
+       
+		<TextView
+            android:id="@+id/timeText" 
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:textSize="10sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginRight="10dp"/>
+		
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/titlebar" >
+            
+        <TextView 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/memory_title"
+            android:textSize="30sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"/>
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent" 		
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+	
+        
+        <Button 
+            android:id="@+id/homebtn"
+            android:layout_width="133dp"
+            android:layout_height="33dp"
+            android:text="HOME"
+            android:textSize="14sp"
+            android:textColor="#32CD32"
+            android:layout_gravity="right" />
+       
+	</LinearLayout>
+	
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+        
+       <TableLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+           
+           <TableRow
+               	android:background="#4169E1">
+                
+                <TextView                    
+                    android:text="@string/selection"
+                    android:textSize="12sp"
+                    android:layout_height="30dp"
+                	android:layout_width="60dp"
+		            android:textColor="#FFFFFF"
+                    android:gravity="center" />
+                <TextView                    
+                    android:text="@string/testnum" 
+		            android:textSize="12sp"
+                    android:layout_width="50dp"
+		            android:textColor="#FFFFFF"
+                    android:gravity="center" />
+                <TextView
+                    android:text="@string/type" 
+		            android:textSize="12sp"
+                    android:layout_width="50dp"
+		           	android:textColor="#FFFFFF"
+                    android:gravity="center" />
+                <TextView
+                    android:text="@string/patientid" 
+		            android:textSize="12sp"
+                    android:layout_width="55dp"
+		           	android:textColor="#FFFFFF"
+                    android:gravity="center" />
+                <TextView
+                    android:text="@string/result" 
+		            android:textSize="12sp"
+                    android:layout_width="55dp"
+		           	android:textColor="#FFFFFF"
+                    android:gravity="center" />
+                <TextView
+                    android:text="@string/datetime" 
+		            android:textSize="12sp"
+                    android:layout_width="70dp"
+		            android:textColor="#FFFFFF"
+                    android:gravity="center" />
+                <TextView
+                    android:text="@string/lotnum" 
+		            android:textSize="12sp"
+                    android:layout_width="70dp"
+		            android:textColor="#FFFFFF"
+                    android:gravity="center" />
+                <TextView
+                    android:text="@string/operator" 
+		         	android:textSize="12sp"
+                    android:layout_width="55dp"
+		            android:textColor="#FFFFFF"
+                    android:gravity="center" />
+                <TextView
+                    android:text="@string/comment" 
+		            android:textSize="12sp"
+                    android:layout_width="60dp"
+		           	android:textColor="#FFFFFF"
+                    android:gravity="center" />
+                
+        	</TableRow>
+         
+        </TableLayout>   
+        
+    </LinearLayout>
+       
+	<LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8" >
+       
+	    <ScrollView 
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent">
+	        
+			<TableLayout 
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="center_horizontal">
+	        
+			    <TableRow
+	                android:background="#B0E0E6">
+	                
+	                <TextView                    
+	                    android:text=""
+	                    android:layout_height="30dp"
+			            android:textSize="12sp"
+	                    android:layout_width="60dp"
+			            android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView                    
+	                    android:id="@+id/testNum1" 
+			            android:textSize="12sp"
+	                    android:layout_width="50dp"
+			            android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/type1" 
+			            android:textSize="12sp"
+	                    android:layout_width="50dp"
+			            android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/patientID1" 
+			            android:textSize="12sp"
+	                    android:layout_width="55dp"
+			            android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/result1" 
+			            android:textSize="12sp"
+	                    android:layout_width="55dp"
+			            android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/dateTime1" 
+			            android:textSize="12sp"
+	                    android:layout_width="70dp"
+			            android:textColor="#000000"
+			            android:gravity="center"
+	                    android:layout_gravity="center" />
+	                <TextView
+	                    android:id="@+id/lotNum1" 
+			            android:textSize="12sp"
+	                    android:layout_width="70dp"
+			            android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/operator1" 
+			            android:textSize="12sp"
+	                    android:layout_width="55dp"
+			            android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/comment1" 
+			            android:textSize="12sp"
+	                    android:layout_width="60dp"
+			            android:textColor="#000000"
+	                    android:gravity="center" />
+	                
+	            </TableRow>
+	            
+	           	<TableRow
+	                android:background="#F0F8FF">
+	                
+	                <TextView                    
+	                    android:text=""
+	                    android:layout_height="30dp"
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView                    
+	                    android:id="@+id/testNum2" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/type2" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/patientID2" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/result2" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/dateTime2" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center"
+	                    android:layout_gravity="center" />
+	                <TextView
+	                    android:id="@+id/lotNum2" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/operator2" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/comment2" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                
+	            </TableRow>
+	            
+	           	<TableRow
+	                android:background="#B0E0E6">
+	                
+	                <TextView                    
+	                    android:text=""
+	                    android:layout_height="30dp"
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView                    
+	                    android:id="@+id/testNum3" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/type3" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/patientID3" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/result3" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/dateTime3" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center"
+	                    android:layout_gravity="center" />
+	                <TextView
+	                    android:id="@+id/lotNum3" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/operator3" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/comment3" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                
+	            </TableRow>
+	            
+	           	<TableRow
+	                android:background="#F0F8FF">
+	                
+	                <TextView                    
+	                    android:text=""
+	                    android:layout_height="30dp"
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView                    
+	                    android:id="@+id/testNum4" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/type4" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/patientID4" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/result4" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/dateTime4" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center"
+	                    android:layout_gravity="center" />
+	                <TextView
+	                    android:id="@+id/lotNum4" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/operator4" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/comment4" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                
+	            </TableRow>
+	            
+	           	<TableRow
+	                android:background="#B0E0E6">
+	                
+	                <TextView                    
+	                    android:text=""
+	                    android:layout_height="30dp"
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView                    
+	                    android:id="@+id/testNum5" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/type5" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/patientID5" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/result5" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/dateTime5" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center"
+	                    android:layout_gravity="center" />
+	                <TextView
+	                    android:id="@+id/lotNum5" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/operator5" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/comment5" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                
+	            </TableRow>
+	            
+	           	<TableRow
+	                android:background="#F0F8FF">
+	                
+	                <TextView                    
+	                    android:text=""
+	                    android:layout_height="30dp"
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView                    
+	                    android:id="@+id/testNum6" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/type6" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/patientID6" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/result6" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/dateTime6" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center"
+	                    android:layout_gravity="center" />
+	                <TextView
+	                    android:id="@+id/lotNum6" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/operator6" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/comment6" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                
+	            </TableRow>
+	            
+	           	<TableRow
+	                android:background="#B0E0E6">
+	                
+	                <TextView                    
+	                    android:text=""
+	                    android:layout_height="30dp"
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView                    
+	                    android:id="@+id/testNum7" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/type7" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/patientID7" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/result7" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/dateTime7" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center"
+	                    android:layout_gravity="center" />
+	                <TextView
+	                    android:id="@+id/lotNum7" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/operator7" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/comment7" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                
+	            </TableRow>
+	            
+	           	<TableRow
+	                android:background="#F0F8FF">
+	                
+	                <TextView                    
+	                    android:text=""
+	                    android:layout_height="30dp"
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView                    
+	                    android:id="@+id/testNum8" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/type8" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/patientID8" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/result8" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/dateTime8" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center"
+	                    android:layout_gravity="center" />
+	                <TextView
+	                    android:id="@+id/lotNum8" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/operator8" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/comment8" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                
+	            </TableRow>
+	            
+	           	<TableRow
+	                android:background="#B0E0E6">
+	                
+	                <TextView                    
+	                    android:text=""
+	                    android:layout_height="30dp"
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView                    
+	                    android:id="@+id/testNum9" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/type9" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/patientID9" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/result9" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/dateTime9" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center"
+	                    android:layout_gravity="center" />
+	                <TextView
+	                    android:id="@+id/lotNum9" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/operator9" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/comment9" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                
+	            </TableRow>
+	            
+	           	<TableRow
+	                android:background="#F0F8FF">
+	                
+	                <TextView                    
+	                    android:text=""
+	                    android:layout_height="30dp"
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView                    
+	                    android:id="@+id/testNum10" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/type10" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/patientID10" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/result10" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/dateTime10" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center"
+	                    android:layout_gravity="center" />
+	                <TextView
+	                    android:id="@+id/lotNum10" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/operator10" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+	                <TextView
+	                    android:id="@+id/comment10" 
+			            android:textSize="12sp"
+	                    android:textColor="#000000"
+	                    android:gravity="center" />
+		                
+	            </TableRow>
+		            
+	   	    </TableLayout>
+	        
+	    </ScrollView>
+	    
+    </LinearLayout>
+    
+</LinearLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HbA1c_analyzer</string>
+    <string name="action_settings">Settings</string>
+    <string name="home_title">SYSTEM READY</string>
+    <string name="test_title">TEST SELECTION</string>
+    <string name="run_title">RUN</string>
+    <string name="action_title">USER ACTION</string>
+    <string name="blank_title">BLANK STEP</string>
+    <string name="result_title">TEST RESULT</string>
+    <string name="memory_title">MEMORY</string>
+    <string name="setting_title">SETTING</string>
+    <string name="systemsetting_title">SYSTEM SETTING</string>
+    <string name="remove_title">REMOVE CARTRIDGE</string>
+    <string name="step1_1st">STEP1 1st</string>
+    <string name="step1_2nd">STEP1 2nd</string>
+    <string name="step1_3rd">STEP1 3rd</string>
+    <string name="step2_1st">STEP2 1st</string>
+    <string name="step2_2nd">STEP2 2nd</string>
+    <string name="step2_3rd">STEP2 3rd</string>
+    <string name="f535nm">535 nm</string>
+    <string name="f660nm">660 nm</string>
+    <string name="f750nm">750 nm</string>
+    <string name="selection">Selection</string>
+    <string name="testnum">Test No.</string>
+    <string name="type">Type</string>
+    <string name="patientid">PatientID</string>
+    <string name="result">Result</string>
+    <string name="datetime">Date/Time</string>
+    <string name="lotnum">Lot No.</string>
+    <string name="operator">Operator</string>
+    <string name="comment">Comment</string>
+       
+</resources>

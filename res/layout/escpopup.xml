@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/popup" >
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="120dp"
+  		android:text="Do you want to cancel??"
+  		android:textSize="20sp"
+  		android:textColor="#000000"
+    	android:gravity="center" />
+
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="bottom" >
+        
+       	<ImageButton 
+            android:id="@+id/okbtn"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/okbtn"
+            android:background="#00000000" />
+
+     	<ImageButton 
+            android:id="@+id/closebtn"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/closebtn"
+            android:background="#00000000" />
+        
+    </LinearLayout>
+    	    
+</LinearLayout>

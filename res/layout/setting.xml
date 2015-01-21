@@ -1,0 +1,371 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background" >
+    
+    <Button
+        android:id="@+id/backicon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15px"
+        android:layout_marginTop="15px"
+        android:background="@drawable/back_selector" />
+    
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/title"
+        android:background="#00000000" />
+    
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="115px"
+        android:layout_marginTop="12px"
+        android:src="@drawable/settingmode"
+        android:background="#00000000" />
+            
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="523px"
+        android:layout_marginTop="10px"
+        android:src="@drawable/deviceicon2"
+        android:background="#00000000" />
+    
+   	<TextView
+        android:id="@+id/timeText" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:typeface="sans"
+        android:textSize="24px"
+        android:textColor="#444444"
+        android:shadowColor="#7F000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="1.2"
+        android:layout_marginLeft="578px"
+        android:layout_marginTop="15px" />
+   	
+   	<TextView
+        android:layout_width="240px"
+        android:layout_height="40px"
+        android:layout_marginLeft="50px"
+        android:layout_marginTop="80px"
+        android:gravity="center"
+        android:text="Heater Temperature"
+        android:typeface="sans"
+        android:textSize="24px"
+        android:textColor="#008000" />
+   		
+   	<TextView
+        android:id="@+id/tempread" 
+        android:layout_width="80px"
+        android:layout_height="50px"
+        android:layout_marginLeft="100px"
+        android:layout_marginTop="130px"
+        android:gravity="center"
+        android:typeface="sans"
+        android:textSize="32px"
+        android:textColor="#FFFFFF"
+        android:background="#000000" />
+
+   	<Button 
+   	    android:id="@+id/tempreadbtn"
+   	    android:layout_width="70px"
+   	    android:layout_height="50px"
+   	    android:layout_marginLeft="200px"
+   	    android:layout_marginTop="130px"
+   	    android:gravity="center"
+   	    android:text="Read"
+   	    android:textSize="20px"
+   	    android:textColor="#008000" />
+   	
+   	<TextView
+        android:id="@+id/adtempread" 
+        android:layout_width="180px"
+        android:layout_height="50px"
+        android:layout_marginLeft="100px"
+        android:layout_marginTop="200px"
+        android:gravity="center"
+        android:typeface="sans"
+        android:textSize="32px"
+        android:textColor="#FFFFFF"
+        android:background="#000000" />
+   	
+   	<TextView
+        android:layout_width="240px"
+        android:layout_height="40px"
+        android:layout_marginLeft="50px"
+        android:layout_marginTop="270px"
+        android:gravity="center"
+        android:text="Heater Setting"
+        android:typeface="sans"
+        android:textSize="24px"
+        android:textColor="#DC143C" />
+   	
+   	<Button 
+   	    android:id="@+id/tempplusbtn"
+   	    android:layout_width="50px"
+   	    android:layout_height="50px"
+   	    android:layout_marginLeft="30px"
+   	    android:layout_marginTop="320px"
+   	    android:gravity="center"
+   	    android:text="+"
+   	    android:textSize="30px"
+   	    android:textStyle="bold"
+   	    android:textColor="#FF0000" />
+   	
+   	<TextView
+        android:id="@+id/tempset" 
+        android:layout_width="80px"
+        android:layout_height="50px"
+        android:layout_marginLeft="100px"
+        android:layout_marginTop="320px"
+        android:gravity="center"
+        android:typeface="sans"
+        android:textSize="32px"
+        android:textColor="#000000"
+        android:background="#FFFFFF" />
+   	
+  	<Button 
+   	    android:id="@+id/tempsetbtn"
+   	    android:layout_width="70px"
+   	    android:layout_height="50px"
+   	    android:layout_marginLeft="200px"
+   	    android:layout_marginTop="320px"
+   	    android:gravity="center"
+   	    android:text="Set"
+   	    android:textSize="20px"
+   	    android:textColor="#DC143C" />
+
+   	<Button 
+   	    android:id="@+id/tempminusbtn"
+   	    android:layout_width="50px"
+   	    android:layout_height="50px"
+   	    android:layout_marginLeft="30px"
+   	    android:layout_marginTop="390px"
+   	    android:gravity="center"
+   	    android:text="-"
+   	    android:textSize="30px"
+   	    android:textStyle="bold"
+   	    android:textColor="#0000FF" />
+   	
+   	<TextView
+        android:id="@+id/adtempset" 
+        android:layout_width="180px"
+        android:layout_height="50px"
+        android:layout_marginLeft="100px"
+        android:layout_marginTop="390px"
+        android:gravity="center"
+        android:typeface="sans"
+        android:textSize="32px"
+        android:textColor="#000000"
+        android:background="#FFFFFF" />
+   	
+   	<TextView
+        android:layout_width="240px"
+        android:layout_height="40px"
+        android:layout_marginLeft="320px"
+        android:layout_marginTop="80px"
+        android:gravity="center"
+        android:text="Shaking Control"
+        android:typeface="sans"
+        android:textSize="24px"
+        android:textColor="#000000" />
+   	
+   	<Button 
+   	    android:id="@+id/st1repeatplusbtn"
+   	    android:layout_width="50px"
+   	    android:layout_height="50px"
+   	    android:layout_marginLeft="320px"
+   	    android:layout_marginTop="130px"
+   	    android:gravity="center"
+   	    android:text="+"
+   	    android:textSize="30px"
+   	    android:textStyle="bold"
+   	    android:textColor="#FF0000" />
+   	
+   	<TextView
+        android:layout_width="100px"
+        android:layout_height="50px"
+        android:layout_marginLeft="390px"
+        android:layout_marginTop="135px"
+        android:gravity="center"
+        android:typeface="sans"
+        android:textSize="28px"
+        android:text="1st"
+        android:textColor="#000000" />
+   	
+   	<EditText
+        android:id="@+id/st1repeatvalue" 
+        android:layout_width="100px"
+        android:layout_height="50px"
+        android:layout_marginLeft="390px"
+        android:layout_marginTop="200px"
+        android:gravity="center"
+        android:typeface="sans"
+        android:textSize="32px"
+        android:textColor="#000000"
+        android:background="#FFFFFF"
+        android:singleLine="true" 
+       	android:imeOptions="actionDone"
+       	android:inputType="number"
+       	android:longClickable="false" />
+
+   	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="500px"
+        android:layout_marginTop="220px"
+        android:gravity="center"
+        android:typeface="sans"
+        android:textSize="24px"
+        android:text="Sec"
+        android:textColor="#000000" />
+   	
+   	<Button 
+   	    android:id="@+id/st1repeatminusbtn"
+   	    android:layout_width="50px"
+   	    android:layout_height="50px"
+   	    android:layout_marginLeft="320px"
+   	    android:layout_marginTop="200px"
+   	    android:gravity="center"
+   	    android:text="-"
+   	    android:textSize="30px"
+   	    android:textStyle="bold"
+   	    android:textColor="#0000FF" />
+   	
+   	<Button 
+   	    android:id="@+id/st2repeatplusbtn"
+   	    android:layout_width="50px"
+   	    android:layout_height="50px"
+   	    android:layout_marginLeft="320px"
+   	    android:layout_marginTop="320px"
+   	    android:gravity="center"
+   	    android:text="+"
+   	    android:textSize="30px"
+   	    android:textStyle="bold"
+   	    android:textColor="#FF0000" />
+   	
+   	<TextView
+        android:layout_width="120px"
+        android:layout_height="50px"
+        android:layout_marginLeft="390px"
+        android:layout_marginTop="325px"
+        android:gravity="center"
+        android:typeface="sans"
+        android:textSize="28px"
+        android:text="2nd"
+        android:textColor="#000000" />
+   	   	
+   	<EditText
+        android:id="@+id/st2repeatvalue" 
+        android:layout_width="100px"
+        android:layout_height="50px"
+        android:layout_marginLeft="390px"
+        android:layout_marginTop="390px"
+        android:gravity="center"
+        android:typeface="sans"
+        android:textSize="32px"
+        android:textColor="#000000"
+        android:background="#FFFFFF"
+        android:singleLine="true" 
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:longClickable="false" />
+   	
+   	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="500px"
+        android:layout_marginTop="410px"
+        android:gravity="center"
+        android:typeface="sans"
+        android:textSize="24px"
+        android:text="Sec"
+        android:textColor="#000000" />
+
+   	<Button 
+   	    android:id="@+id/st2repeatminusbtn"
+   	    android:layout_width="50px"
+   	    android:layout_height="50px"
+   	    android:layout_marginLeft="320px"
+   	    android:layout_marginTop="390px"
+   	    android:gravity="center"
+   	    android:text="-"
+   	    android:textSize="30px"
+   	    android:textStyle="bold"
+   	    android:textColor="#0000FF" />
+   	
+   	<TextView
+        android:layout_width="200px"
+        android:layout_height="40px"
+        android:layout_marginLeft="580px"
+        android:layout_marginTop="80px"
+        android:gravity="center"
+        android:text="Measurement"
+        android:typeface="sans"
+        android:textSize="24px"
+        android:textColor="#000080" />
+   	
+   	<Button 
+   	    android:id="@+id/measurement15btn"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:layout_marginLeft="610px"
+   	    android:layout_marginTop="125px"
+   	    android:gravity="center"
+   	    android:text="25 - 10"
+   	    android:textSize="24px"
+   	    android:textColor="#000080"
+   	    android:background="@drawable/btn8" />
+
+   	<Button 
+   	    android:id="@+id/measurement11btn"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:layout_marginLeft="610px"
+   	    android:layout_marginTop="190px"
+   	    android:gravity="center"
+   	    android:text="25 - 14"
+   	    android:textSize="24px"
+   	    android:textColor="#000080"
+   	    android:background="@drawable/btn8" />
+   	
+   	<Button 
+   	    android:id="@+id/measurement7btn"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="wrap_content"
+   	    android:layout_marginLeft="610px"
+   	    android:layout_marginTop="255px"
+   	    android:gravity="center"
+   	    android:text="25 - 18"
+   	    android:textSize="24px"
+   	    android:textColor="#000080"
+   	    android:background="@drawable/btn8" />
+   	
+   	<TextView
+        android:layout_width="200px"
+        android:layout_height="40px"
+        android:layout_marginLeft="580px"
+        android:layout_marginTop="325px"
+        android:gravity="center"
+        android:text="Data Handling"
+        android:typeface="sans"
+        android:textSize="24px"
+        android:textColor="#6A5ACD" />
+
+   	<Button 
+   	    android:id="@+id/datahandling"
+   	    android:layout_width="180px"
+   	    android:layout_height="50px"
+   	    android:layout_marginLeft="590px"
+   	    android:layout_marginTop="380px"
+   	    android:gravity="center"
+        android:text="ELIMINATION"
+   	    android:typeface="sans"
+   	    android:textSize="20px"
+   	    android:textColor="#6A5ACD" />
+</RelativeLayout>
