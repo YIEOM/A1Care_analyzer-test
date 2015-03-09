@@ -291,25 +291,12 @@ public class SerialPort {
 						
 						size = mFileInputStream.read(rxBuffer);
 						Log.w("BoardRxThread", "BoardInputBuffer : " + new String(rxBuffer));
-//						Log.w("BoardRxThread", "rxBuffer[1] : " + Integer.toString(rxBuffer[1]));
-//						Log.w("BoardRxThread", "rxBuffer[2] : " + Integer.toString(rxBuffer[2]));
-//						Log.w("BoardRxThread", "rxBuffer[3] : " + Integer.toString(rxBuffer[3]));
-//						Log.w("BoardRxThread", "rxBuffer[4] : " + Integer.toString(rxBuffer[4]));
-						
+
 						if(size > 0) {
 						
-//							if(debugFlag == 1) {
-//								
-//								for(int i = 0; i < size; i++) {
-//									
-//									debugBuffer[debugIndex] = rxBuffer[i];
-//									debugIndex++;
-//								}
-//							}
-							
-//							Log.w("BoardRxThread", "size : " + size);
 							BoardDataReceive(size);	
 						}
+						
 					} else {
 						
 						return;

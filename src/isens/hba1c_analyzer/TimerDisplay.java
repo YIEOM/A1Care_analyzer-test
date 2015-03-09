@@ -25,15 +25,11 @@ public class TimerDisplay {
 	private Timer timer;
 	private Timer runTimer;
 	
-	private GpioPort              TimerGpio;
-	private RunActivity           TimerRun;	
 	private HomeActivity          TimerHome;
 	private BlankActivity         TimerBlank;
 	private SettingActivity       TimerSetting;
 	
 	public void TimerInit() {
-		
-//		Log.w("TimerInit", "Init");
 		
 		OneHundredmsPeriod = new TimerTask() {
 			
@@ -42,9 +38,6 @@ public class TimerDisplay {
 			public void run() {
 				Runnable updater = new Runnable() {
 					public void run() {
-						
-//						TimerGpio = new GpioPort();
-//						TimerGpio.SensorScan();
 						
 						if(cnt++ == 9) { // One second period
 						
@@ -57,12 +50,6 @@ public class TimerDisplay {
 								ClockDecision();
 							}
 						}
-						
-//						if(cnt == 0) {	
-//						
-//							TimerAction = new ActionActivity();
-//							TimerAction.BarcodeScan();
-//						}										
 					}
 				};
 				
@@ -93,7 +80,6 @@ public class TimerDisplay {
 		rTime[4] = dfm.format(c.get(Calendar.MINUTE));		
 		rTime[6] = dfm.format(c.get(Calendar.SECOND));
 		rTime[7] = dfm.format(c.get(Calendar.HOUR_OF_DAY));
-//		Log.w("RealTime", "ampm" + c.get(Calendar.AM_PM));
 			
 		if(c.get(Calendar.AM_PM) == 0) {
 
@@ -112,32 +98,7 @@ public class TimerDisplay {
 			TimerHome = new HomeActivity();
 			TimerHome.CurrTimeDisplay();
 			break;
-									
-//		case TestClock			:	
-//			TimerTest = new TestActivity();
-//			TimerTest.CurrTimeDisplay();
-//			break;
-//
-//		case ActionClock		:	
-//			TimerAction = new ActionActivity();
-//			TimerAction.CurrTimeDisplay();
-//			break;
-//			
-//		case RunClock			:	
-//			TimerRun = new RunActivity();
-//			TimerRun.CurrTimeDisplay();
-//			break;
-//			
-//		case ResultClock		:	
-//			TimerResult = new ResultActivity();
-//			TimerResult.CurrTimeDisplay();
-//			break;
-//			
-//		case MemoryClock		:	
-//			TimerMemory = new MemoryActivity();
-//			TimerMemory.CurrTimeDisplay();
-//			break;
-								
+
 		case BlankClock			:	
 			TimerBlank = new BlankActivity();
 			TimerBlank.CurrTimeDisplay();
@@ -147,56 +108,6 @@ public class TimerDisplay {
 			TimerSetting = new SettingActivity();
 			TimerSetting.CurrTimeDisplay();
 			break;
-								
-//		case SystemSettingClock	:	
-//			TimerSystemSetting = new SystemSettingActivity();
-//			TimerSystemSetting.CurrTimeDisplay();
-//			break;
-//							
-//		case RemoveClock		:
-//			TimerRemove = new RemoveActivity();
-//			TimerRemove.CurrTimeDisplay();
-//			break;
-//			
-//		case PatientClock		:
-//			TimerPatient = new PatientTestActivity();
-//			TimerPatient.CurrTimeDisplay();
-//			break;
-//			
-//		case ExportClock		:
-//			TimerExport = new ExportActivity();
-//			TimerExport.CurrTimeDisplay();
-//			break;
-//			
-//		case DateClock			:
-//			TimerDisplay = new DisplayActivity();
-//			TimerDisplay.CurrTimeDisplay();
-//			break;
-//
-//		case DisplayClock			:
-//			TimerDate = new DateActivity();
-//			TimerDate.CurrTimeDisplay();
-//			break;
-//			
-//		case HISSettingClock			:
-//			TimerHISSetting = new HISSettingActivity();
-//			TimerHISSetting.CurrTimeDisplay();
-//			break;
-//			
-//		case HISClock			:
-//			TimerHIS = new HISActivity();
-//			TimerHIS.CurrTimeDisplay();
-//			break;
-//		
-//		case UserClock			:
-//			TimerUser = new UserDefineActivity();
-//			TimerUser.CurrTimeDisplay();
-//			break;
-//
-//		case SoundClock			:
-//			TimerSound = new SoundActivity();
-//			TimerSound.CurrTimeDisplay();
-//			break;
 			
 		default					:	
 			break;		

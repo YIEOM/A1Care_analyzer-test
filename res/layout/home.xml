@@ -367,12 +367,23 @@
         android:background="@drawable/btn_selector1" />
           
     <TextView
-   	    android:id="@+id/versiontext"
-	    android:layout_width="200px"
+   	    android:id="@+id/fwVersionText"
+	    android:layout_width="240px"
 	    android:layout_height="30px"
-	    android:layout_marginLeft="590px"
+        android:layout_marginLeft="310px"
 	    android:layout_marginTop="440px"
-	    android:gravity="bottom|right"
+	    android:gravity="left"
+        android:typeface="sans"
+        android:textSize="18px"
+        android:textColor="#04A458" />
+   	
+   	<TextView
+   	    android:id="@+id/swVersionText"
+	    android:layout_width="240px"
+	    android:layout_height="30px"
+        android:layout_marginLeft="550px"
+	    android:layout_marginTop="440px"
+	    android:gravity="left"
         android:typeface="sans"
         android:textSize="18px"
         android:textColor="#04A458" />

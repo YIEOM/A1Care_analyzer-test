@@ -28,11 +28,13 @@ import android.widget.Toast;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.Color;
 
 public class HomeActivity extends Activity {
 	
-	final static String VERSION = "A1Care_v1.3.01-test";
+	final static String FW_VERSION = "QV";
 	
 	private SerialPort HomeSerial;
 	private TimerDisplay HomeTimer;
@@ -92,7 +94,7 @@ public class HomeActivity extends Activity {
 	
 	public Toast toast;
 	public static TextView TimeText;
-	public TextView versionText;
+	public TextView fwVersionText, swVersionText;
 	
 	public static boolean InitState = false;
 	
@@ -108,7 +110,8 @@ public class HomeActivity extends Activity {
 		
 		deviceState = (TextView) findViewById(R.id.devicestate);
 		
-		versionText = (TextView)findViewById(R.id.versiontext);
+		fwVersionText = (TextView)findViewById(R.id.fwVersionText);
+		swVersionText = (TextView)findViewById(R.id.swVersionText);
 		
 		oneOne = (TextView) findViewById(R.id.oneone);
 		oneTwo = (TextView) findViewById(R.id.onetwo);
@@ -141,6 +144,7 @@ public class HomeActivity extends Activity {
 		
 			public void onClick(View v) {
 			
+				setButtonState(false);
 				Start();
 			}
 		});
@@ -150,7 +154,7 @@ public class HomeActivity extends Activity {
 		
 			public void onClick(View v) {
 			
-				settingBtn.setEnabled(false);
+				setButtonState(false);
 				
 				WhichIntent(TargetIntent.Setting);
 			}
@@ -161,6 +165,7 @@ public class HomeActivity extends Activity {
 		
 			public void onClick(View v) {
 			
+				setButtonState(false);
 				WhichIntent(TargetIntent.Blank);
 			}
 		});
@@ -283,20 +288,14 @@ public class HomeActivity extends Activity {
 			InitState = true;
 			
 			/* Serial communication start */
-//			Log.w("HomeActivity", "Init");
 			HomeSerial = new SerialPort();
 			HomeSerial.BoardSerialInit();
 			HomeSerial.BoardRxStart();
-//			HomeSerial.PrinterSerialInit();
 			
 			/* Timer start */
 			HomeTimer = new TimerDisplay();
 			HomeTimer.TimerInit(); 
 			HomeTimer.RealTime();
-			
-			/* Barcode reader off */
-//			HomeGpio = new GpioPort();
-//			HomeGpio.TriggerHigh();
 			
 			ParameterInit();
 			
@@ -307,7 +306,8 @@ public class HomeActivity extends Activity {
 		TimerDisplay.timerState = whichClock.HomeClock;		
 		CurrTimeDisplay();
 		
-		versionText.setText(HomeActivity.VERSION);
+		DisplayVersion mDisplayVersion = new DisplayVersion();
+		mDisplayVersion.start();
 	}
 	
 	public void Start() {
@@ -316,24 +316,10 @@ public class HomeActivity extends Activity {
 		
 		AbsorbanceDisplay();
 		
-		runBtn.setEnabled(false);
-		settingBtn.setEnabled(false);
-		blankBtn.setEnabled(false);
-		check2Btn.setEnabled(false);
-		check3Btn.setEnabled(false);
-		check4Btn.setEnabled(false);
-		check5Btn.setEnabled(false);
-		check6Btn.setEnabled(false);
-		
 		TimerInit();
 		
 		HomeRun = new RunActivity();
 		HomeRun.TestStart();		
-		
-//		ToastView(Double.toString(RunActivity.BlankValue[0]));
-//		ToastView(Double.toString(RunActivity.BlankValue[1]) + " " + Double.toString(RunActivity.Step1stValue[0]));
-//		ToastView(Double.toString(RunActivity.BlankValue[2]) + " " + Double.toString(RunActivity.Step1stValue[1]));
-//		ToastView(Double.toString(RunActivity.BlankValue[3]) + " " + Double.toString(RunActivity.Step1stValue[2]));
 	}
 	
 	public void Stop() {
@@ -347,14 +333,7 @@ public class HomeActivity extends Activity {
 		deviceState.setTextColor(Color.parseColor("#008000"));
 		deviceState.setText("READY");
 		
-		runBtn.setEnabled(true);
-		settingBtn.setEnabled(true);
-		blankBtn.setEnabled(true);
-		check2Btn.setEnabled(true);
-		check3Btn.setEnabled(true);
-		check4Btn.setEnabled(true);
-		check5Btn.setEnabled(true);
-		check6Btn.setEnabled(true);
+		setButtonState(true);
 	}
 	
 	public void DeviceStateDisplay1() {
@@ -526,6 +505,18 @@ public class HomeActivity extends Activity {
     	sixThree.setText(hbA1cFormat.format(RunActivity.Step2ndAbsorb3[2])); 
 	}
 	
+	public void setButtonState(boolean state) {
+		
+		runBtn.setEnabled(state);
+		settingBtn.setEnabled(state);
+		blankBtn.setEnabled(state);
+		check2Btn.setEnabled(state);
+		check3Btn.setEnabled(state);
+		check4Btn.setEnabled(state);
+		check5Btn.setEnabled(state);
+		check6Btn.setEnabled(state);
+	}
+	
 	public void WhichIntent(TargetIntent Itn) { // Activity conversion
 		
 		switch(Itn) {
@@ -583,7 +574,98 @@ public class HomeActivity extends Activity {
 		RunActivity.BlankValue[0] = Double.parseDouble(BlankPref.getString("BlankDark", "2995.6"));
 		RunActivity.BlankValue[1] = Double.parseDouble(BlankPref.getString("Blank535nm", "203094.8")); // Dark Blank값을 제거하고 삽입
 		RunActivity.BlankValue[2] = Double.parseDouble(BlankPref.getString("Blank660nm", "400540.0"));
-		RunActivity.BlankValue[3] = Double.parseDouble(BlankPref.getString("Blank750nm", "634877.6"));
+		RunActivity.BlankValue[3] = Double.parseDouble(BlankPref.getString("Blank750nm", "634877.6"));	
+	}
+	
+	public class DisplayVersion extends Thread {
 		
+		String swVersion, fwVersion;
+		
+		PackageInfo pi = null;
+		
+		public void run() {
+						
+			SerialPort.Sleep(200);
+			
+			try {
+
+				pi = getPackageManager().getPackageInfo(getPackageName(), 0);
+
+			} catch (NameNotFoundException e) {
+
+				// TODO Auto-generated catch block
+
+				e.printStackTrace();
+			}
+
+			swVersion = pi.versionName;
+			
+			fwVersion = getFwVersion();
+			
+			new Thread(new Runnable() {
+				public void run() {
+					runOnUiThread(new Runnable(){
+						public void run() {
+	
+							swVersionText.setText("SW : " + swVersion);
+							fwVersionText.setText("FW : " + fwVersion);
+						}
+					});
+				}
+			}).start();
+		}
+	}
+	
+	public String getFwVersion() {
+		
+		GetFwVersion mGetFwVersion = new GetFwVersion();
+		mGetFwVersion.start();
+		
+		try {
+			mGetFwVersion.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return mGetFwVersion.getVersion();
+	}
+	
+	public class GetFwVersion extends Thread {
+		
+		String version;
+		
+		public void run() {
+			
+			String temp;
+			int cnt = 0;
+			
+			HomeSerial = new SerialPort();
+			SerialPort.RxClear();
+			HomeSerial.BoardTx(FW_VERSION, CtrTarget.PhotoSet);
+			
+			do {	
+			
+				temp = SerialPort.mReception.toString();
+
+				Log.w("GetFwVersion", "temp : " + temp);
+				
+				if(cnt++ == 15) {
+					
+					temp = "Nothing";
+					break;
+				}
+				
+				SerialPort.Sleep(100);
+			
+			} while(temp.equals(""));
+			
+			version = temp;
+		}
+		
+		public String getVersion() {
+			
+			return version;
+		}
 	}
 }

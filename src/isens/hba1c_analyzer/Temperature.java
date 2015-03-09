@@ -11,8 +11,6 @@ public class Temperature extends SerialPort {
 	public TextView TmpText;
 	private Toast toast;
 	
-//	final static double InitTmp = (double) 36.5;
-	
 	public static double tempReadValue;
 	public static String ADTempRead;
 	public static double tempSetValue;
@@ -20,7 +18,6 @@ public class Temperature extends SerialPort {
 	
 	public void TmpInit() {
 		
-		Log.w("TmpInit", "run");
 		double tmpDouble;
 		String tmpString;
 		DecimalFormat tmpFormat;
@@ -46,8 +43,6 @@ public class Temperature extends SerialPort {
 		
 		ADTempRead = mReception.toString();
 		tmpRaw = Double.parseDouble(mReception.toString());
-//		tmpRaw = 75600;
-//		Log.w("TmpRead", "Double mReception : " + tmpRaw);
 		tmpDouble = (tmpRaw / (double) 1670.17) - (double) 15.5;
 		
 		return tmpDouble;
